@@ -1,0 +1,127 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.year{
+    text-align: center;
+    height: 10vh;
+}
+.year .title-year{
+    font-size: 4em;
+}
+
+
+.calendar{
+    width: 100vw;
+    height: 80vh;
+}
+.calendar-container{
+    background: rgb(225, 230, 224);
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(7,1fr);
+    grid-template-rows: 10% 6% repeat(6, 14%);
+}
+.meses{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-column: 1 / span 7;
+    grid-row: span 1;
+}
+.meses h1{
+    font-size: 3em;
+}
+.previus-months,.next-months{
+    position: absolute;
+    height: 50px;
+    width: 50px;
+    border: none;
+    outline: none;
+    top: calc(50% - 25px);
+    border-radius: 50%;
+    cursor: pointer;
+    background: #344654;
+    color: #fff;
+}
+.previus-months{
+    left: 10px;
+}
+.next-months{
+    right: 10px;
+}
+.text-days,.num-days{
+    border: 1px solid rgb(0, 0, 0);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.text-days{
+    font-size: 1.3em;
+    background: #ddd;
+}
+.num-days{
+    background: #344654;
+    color: #fff;
+    font-size: 2em;
+}
+
+.day-actual{
+    color: red;
+    font-weight: 900;
+}
+
+@media screen and (max-width:720px){   
+    .calendar{
+        height: 70vh;
+    }
+    .meses h1{
+        font-size: 2.3em;
+    }    
+    .previus-months,.next-months{
+        height: 30px;
+        width: 30px;
+        top: calc(50% - 15px);
+    }
+    .text-days{
+        font-size: 1em;
+    }
+    .num-days{
+        font-size: 1.3em;
+    }
+}
+
+@media screen and (max-width: 480px){   
+    body{
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .calendar{
+        height: 50vh;
+    }
+    .meses h1{
+        font-size: 2em;
+    }    
+    .previus-months,.next-months{
+        height: 20px;
+        width: 20px;
+        top: calc(50% - 10px);
+    }
+    .text-days{
+        font-size: .8em;
+    }
+    .num-days{
+        font-size: 1.3em;
+    }
+}
